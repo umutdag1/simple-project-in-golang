@@ -2,6 +2,7 @@ package main
 
 import (
 	"contact-form-rest-api/helper"
+	"contact-form-rest-api/models"
 	"context"
 	"encoding/json"
 	"log"
@@ -13,12 +14,6 @@ import (
 
 const dbName = "Example"
 const collectionName = "contactInfo"
-
-type Person struct {
-	Name    string `json:"name,omitempty" bson:"name,omitempty"`
-	Email   string `json:"email,omitempty" bson:"email,omitempty"`
-	Message string `json:"message,omitempty" bson:"Message,omitempty"`
-}
 
 var collection = helper.ConnectDB(dbName, collectionName)
 
@@ -40,7 +35,7 @@ func main() {
 func saveContact(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
 
-	var person Person
+	var person models.Person
 
 	_ = json.NewDecoder(r.Body).Decode(&person)
 
