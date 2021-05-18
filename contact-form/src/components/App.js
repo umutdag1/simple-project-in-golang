@@ -43,7 +43,7 @@ class App extends React.Component {
       })
       .catch((error) => {
         //console.log(error);
-        this.setState({ Response: "500 Internal Server Error" })
+        this.setState(error.ErrorMessage)
         this.setState({ ResponseColor: "bg-danger" })
       })
   }
