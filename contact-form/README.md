@@ -1,4 +1,4 @@
-# Getting Started with Create React App
+# How to Run
 
 First run code --> npm i
 
