@@ -1,4 +1,4 @@
-# Getting Started with Create React App
+# How to Run
 
 Run the code --> go run main.go
 
